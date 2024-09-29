@@ -1,8 +1,8 @@
 import java.util.Objects;
 
 public class Book {
-    private String title;
-    private Author author;
+    private final String title;
+    private final Author author;
     private Integer publishingYear;
 
     public Book(String title, Author author, Integer publishingYear) {
@@ -39,6 +39,10 @@ public class Book {
     @Override
     public int hashCode() {
         return Objects.hash(title, author, publishingYear);
+    }
 
+    @Override
+    public String toString() {
+        return author.toString() + ". Кинга: " + this.title + ". Год публикации: " + this.publishingYear;
     }
 }
